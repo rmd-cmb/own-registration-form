@@ -1,0 +1,214 @@
+/* file styles.css */
+*, 
+*::before, 
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --color-bg: rgb(135, 62, 117);
+    --color-white: white;
+    --color-placeholder: rgb(185, 185, 177);
+    --color-a: rgb(90, 90, 242);
+    --color-a-hover: black;
+    --color-a-focus: grey;
+    --color-fieldset-background: grey;
+    --color-fieldset-border: grey;
+    --color-error-validation: rgb(255, 87, 49);
+    --color-black: black;
+}
+
+@media (prefers-color-scheme: dark) {
+   :root { 
+    --color-bg: rgb(67, 67, 84);
+    --color-fieldset-background:  rgb(103, 103, 129);
+    --color-fieldset-border: white;
+   }
+}
+
+.red-border {
+    border: 2px solid var(--color-error-validation);
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-white);
+}
+
+main {
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+ font-size: 1.5em;
+}
+
+form {
+    width: 400px;
+    max-width: 500px;    
+}
+
+fieldset {
+    
+ background-color: var(--color-fieldset-background);
+ border: 1px solid var(--color-fieldset-border);
+ border-radius: 6px;
+ margin-bottom: 4px;
+ cursor: default;
+ 
+}
+
+legend {
+ color:  var(--color-fieldset-border);
+ font-size: 1.2em;
+ cursor: default;
+}
+
+input {
+    display: block;
+    width: 100%;
+    margin: 2px 0;
+    border-radius: 4px;
+    border: none;
+    position: relative;
+    height: 20px;
+}
+
+input::placeholder {
+    color: var(--color-placeholder);
+}
+
+#terms-conditions {
+    width: 20px; 
+    height: 20px;
+    cursor: pointer;
+}
+
+#label-terms-conditions {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+
+
+a {
+    color: var(--color-a);
+}
+
+a:hover {
+    color: var(--color-a-hover);
+}
+
+a:focus {
+    color: var(--color-a-focus);
+}
+
+
+
+input[type="radio"] {
+    cursor: pointer;
+    width: 20px;
+    
+}
+
+label {
+    position: relative;
+}
+
+label.radio {
+ display: flex;
+ justify-content: flex-start;
+ align-items: center;
+ gap: 10px;
+    cursor: pointer;
+}
+
+#about-yourself {
+    display: grid;
+    grid-template-columns: 5% 40% 10% 40% 5%;
+}
+
+div#country-container {
+    grid-column-start: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+div#radio-container {
+    width: 100%;
+    grid-column-start: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+div#radio-container > p {
+    margin: 0;
+}
+
+.gender {   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#select-country {
+    width: 100%;
+    padding: 4px 0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+#submit-btn {
+    display: block;
+    margin: 20px auto;
+    width: 200px;
+    height: 40px;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 700;
+    color:rgb(67, 67, 84);
+    text-transform: uppercase;
+
+}
+
+#submit-btn:hover {
+    cursor: pointer;
+}
+
+
+
+.error-msg {
+    color: var(--color-black);
+    /*position: absolute;*/
+    background-color: var(--color-error-validation);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: fit-content;
+    font-size: 0.7em;
+
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+
+.error-msg p {
+    padding: 0;
+    margin: 2px 4px ;
+}
+
+.hidden {
+    display: none;
+}

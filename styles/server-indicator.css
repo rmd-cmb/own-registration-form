@@ -1,0 +1,27 @@
+
+.server-icon {
+   
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.server-icon.ok {
+    background-color: green;
+}
+
+.server-icon.not-ok {
+    background-color: red;
+}
+
+
+.server-icon.wait{
+    background-color: grey;
+}
+
+
+
+.hidden {
+    display: none;
+}

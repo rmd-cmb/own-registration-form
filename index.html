@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Own Registration Form</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="./styles/server-indicator.css">
+    </head>
+    <body>
+        <main>
+            <h1>Registration Form</h1>
+
+            <form  action="" method="post" id="reg-form" novalidate>
+                <fieldset>
+                    <legend>Personal Data</legend>
+                    <label for="name">Name</label>
+                    <input name="name" id="name" type="text" placeholder="Tom">
+                    <div class="error-msg hidden" id="invalid-name"></div>
+
+                    <label for="email">Email</label>
+                    <input name="email" id="email" type="text" placeholder="example@email.com">
+                    <div class="error-msg hidden" id="invalid-email"></div>
+
+                    <label for="phone">Phone</label>
+                    <input name="phone" id="phone" type="tel" placeholder="+370 22 22 222"> 
+                    <div class="error-msg hidden" id="invalid-phone"></div>
+
+                </fieldset>
+                <fieldset>
+                    <legend>Login Data</legend> 
+                    
+                    <label for="login">Login</label>
+                    <div class="server-icon hidden" id="server-icon-login"></div>
+                    <input  
+                        name="login" 
+                        id="login" 
+                        type="text" 
+                        placeholder="Cat123"
+                        autocomplete="user-name"
+                    >
+                    
+                    <div class="error-msg hidden" id="invalid-login"></div>
+
+                    <label for="password">Password</label>
+                    <input 
+                        name="password" 
+                        id="password" 
+                        type="text" 
+                        placeholder="Password"
+                        autocomplete="new-password"
+                    >
+                    <div class="error-msg hidden" id="invalid-password"></div>
+
+                    <label for="confirm-password">Repeat Password</label>
+                    <input 
+                        name="confirm-password" 
+                        id="confirm-password" 
+                        type="password" 
+                        placeholder="Repeat password"
+                        autocomplete="new-password"
+                    >
+                    <div class="error-msg hidden" id="invalid-confirm-password"></div>
+
+                </fieldset>
+                <fieldset id="about-yourself">
+                    <legend>Tell us about yourself</legend>
+                    
+                    <div id="country-container">
+                        <label for="select-country">Country</label>
+                        <select name="country" id="select-country" ></select>
+                    </div>
+                    
+                    <div id="radio-container">
+                    <p>Gender</p> 
+                    <div class="gender">
+                        <label class="radio" for="male">
+                            <input type="radio" name="gender" id="male" value="male">Male</label>
+                        
+                        <label class="radio" for="female">
+                            <input type="radio" name="gender" id="female" value="female">Female</label>     
+
+                        <label class="radio" for="other">
+                            <input type="radio" name="gender" id="other" value="other">Other</label>
+                    </div>
+                </div>
+                </fieldset>
+
+
+                <fieldset>
+                    <legend>Terms and Conditions</legend>
+                    <p>Read and confirm our <a href="/terms-and-conditions" target="_blank">Terms and Conditions</a> before we started.</p>
+                    
+                    <label id="label-terms-conditions"><input type="checkbox" name="terms-conditions" id="terms-conditions">I Agree</label>
+                </fieldset>
+
+                <button id="submit-btn" type="submit">Submit</button>
+
+
+
+            </form>
+        </main>
+
+        <script type="module" src="script.js"></script>
+    </body>
+</html>
