@@ -16,6 +16,9 @@
     --color-fieldset-border: grey;
     --color-error-validation: rgb(255, 87, 49);
     --color-black: black;
+    --color-green: rgb(14, 138, 14);
+    --color-submit-text:rgb(67, 67, 84);
+    --color-submit-text-act: rgb(213, 215, 228);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -177,13 +180,17 @@ div#radio-container > p {
     border-radius: 8px;
     font-size: 1em;
     font-weight: 700;
-    color:rgb(67, 67, 84);
+    color:var(--color-submit-text);
     text-transform: uppercase;
 
 }
 
 #submit-btn:hover {
     cursor: pointer;
+}
+
+#submit-btn:active {
+    background-color: var(--color-submit-text-act);
 }
 
 
@@ -211,4 +218,9 @@ div#radio-container > p {
 
 .hidden {
     display: none;
+}
+
+h1#success {
+    color: var(--color-green);
+    font-size: 2em;
 }

@@ -6,17 +6,22 @@ import {debounceInput} from "./debounce.js";
 import {validateLogin, currentFocusLogin} from "./validate-login.js";
 
 let debounceHandler = debounceInput(usedLoginMOCK);
-const useMock = true;
+const useMock = false;
 
 async function usedLoginSERVER (userData){
   try{
-    let serverResponse = await fetch("./server-api/login.php");
+    let serverResponse = await fetch("https://jsonplaceholder.typicode.com/users");
     if(!serverResponse.ok){
       throw new Error("Server error" + serverResponse.status);
     }
     let serverData = await serverResponse.json();
-    
-    const exists = serverData.includes(userData);  
+    let usersLogins = serverData.map(obj => obj["username"]);
+      
+      /* userLogins
+      ['Bret', 'Antonette', 'Samantha', 'Karianne', 'Kamren', 'Leopoldo_Corkery', 'Elwyn.Skiles', 'Maxime_Nienow', 'Delphine', 'Moriah.Stanton']
+      */
+
+    const exists = usersLogins.includes(userData);  
     if(exists){
         showIndicator("hide");
         changeServerStatus("not-ok");
@@ -50,9 +55,7 @@ function usedLoginMOCK (userData){
         changeServerStatus("ok");
         showIndicator(serverStatus);
     }
-    
     validateLogin();
-
     return exists;
 }
 
