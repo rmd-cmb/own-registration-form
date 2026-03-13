@@ -1,6 +1,6 @@
 //"./modules/login/debounce.js"
 //login debounce
-const delay = 2500;
+const delay = 500;
 
 export function debounceInput (func) {
     let timerID;

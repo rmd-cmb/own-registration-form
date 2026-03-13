@@ -5,7 +5,7 @@ import {serverStatus, changeServerStatus, showIndicator} from "./server-indicato
 import {debounceInput} from "./debounce.js";
 import {validateLogin, currentFocusLogin} from "./validate-login.js";
 
-let debounceHandler = debounceInput(usedLoginMOCK);
+//lslet debounceHandler = debounceInput(usedLoginMOCK);
 const useMock = false;
 
 async function usedLoginSERVER (userData){
@@ -59,4 +59,5 @@ function usedLoginMOCK (userData){
     return exists;
 }
 
-export const usedLogin = useMock ? debounceHandler : usedLoginSERVER;
+
+export const usedLogin = useMock ? debounceInput(usedLoginMOCK) : debounceInput(usedLoginSERVER);;
